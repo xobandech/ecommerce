@@ -1,0 +1,827 @@
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./components/Contexts/UserContext";
+import NavigationBar from "./components/NavBar/NavigationBar";
+import HomePage from "./components/Home/HomePage";
+import Products from "./components/Products/Products";
+import Cart from "./components/Cart/Cart";
+import UserLogging from "./components/UserLogging/UserLogging";
+const products = [{
+  "name": "Face to face",
+  "category": "Automotive",
+  "price": 14.47,
+  "id": 1,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "global",
+  "category": "Automotive",
+  "price": 396.83,
+  "id": 2,
+  "quantity": 14,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Mandatory",
+  "category": "Automotive",
+  "price": 235.75,
+  "id": 3,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "hub",
+  "category": "Automotive",
+  "price": 577.2,
+  "id": 4,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "knowledge user",
+  "category": "Automotive",
+  "price": 2.12,
+  "id": 5,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Managed",
+  "category": "Automotive",
+  "price": 686.31,
+  "id": 6,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Cross-group",
+  "category": "Automotive",
+  "price": 825.72,
+  "id": 7,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "didactic",
+  "category": "Automotive",
+  "price": 57.03,
+  "id": 8,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "zero tolerance",
+  "category": "Automotive",
+  "price": 168.57,
+  "id": 9,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "orchestration",
+  "category": "Automotive",
+  "price": 720.47,
+  "id": 10,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "implementation",
+  "category": "Automotive",
+  "price": 850.29,
+  "id": 11,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "intermediate",
+  "category": "Automotive",
+  "price": 502.19,
+  "id": 12,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Profound",
+  "category": "Automotive",
+  "price": 140.63,
+  "id": 13,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Streamlined",
+  "category": "Automotive",
+  "price": 33.45,
+  "id": 14,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "database",
+  "category": "Automotive",
+  "price": 506.86,
+  "id": 15,
+  "quantity": 14,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Polarised",
+  "category": "Automotive",
+  "price": 510.99,
+  "id": 16,
+  "quantity": 10,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Organized",
+  "category": "Automotive",
+  "price": 441.63,
+  "id": 17,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "dynamic",
+  "category": "Automotive",
+  "price": 367.65,
+  "id": 18,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Right-sized",
+  "category": "Automotive",
+  "price": 329.17,
+  "id": 19,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "asynchronous",
+  "category": "Automotive",
+  "price": 509.77,
+  "id": 20,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Inverse",
+  "category": "Automotive",
+  "price": 810.0,
+  "id": 21,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "archive",
+  "category": "Automotive",
+  "price": 176.49,
+  "id": 22,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "function",
+  "category": "Automotive",
+  "price": 625.37,
+  "id": 23,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "middleware",
+  "category": "Automotive",
+  "price": 89.0,
+  "id": 24,
+  "quantity": 8,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "intangible",
+  "category": "Automotive",
+  "price": 299.83,
+  "id": 25,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "empowering",
+  "category": "Automotive",
+  "price": 91.41,
+  "id": 26,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Multi-channelled",
+  "category": "Automotive",
+  "price": 143.52,
+  "id": 27,
+  "quantity": 11,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "knowledge base",
+  "category": "Automotive",
+  "price": 296.35,
+  "id": 28,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "explicit",
+  "category": "Automotive",
+  "price": 931.75,
+  "id": 29,
+  "quantity": 8,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "uniform",
+  "category": "Automotive",
+  "price": 924.48,
+  "id": 30,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "zero tolerance",
+  "category": "Automotive",
+  "price": 626.84,
+  "id": 31,
+  "quantity": 3,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Assimilated",
+  "category": "Automotive",
+  "price": 742.81,
+  "id": 32,
+  "quantity": 9,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "adapter",
+  "category": "Automotive",
+  "price": 728.0,
+  "id": 33,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Reactive",
+  "category": "Automotive",
+  "price": 219.55,
+  "id": 34,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Up-sized",
+  "category": "Automotive",
+  "price": 762.84,
+  "id": 35,
+  "quantity": 11,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "software",
+  "category": "Automotive",
+  "price": 581.6,
+  "id": 36,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Front-line",
+  "category": "Automotive",
+  "price": 201.3,
+  "id": 37,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "attitude",
+  "category": "Automotive",
+  "price": 675.91,
+  "id": 38,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Monitored",
+  "category": "Automotive",
+  "price": 376.91,
+  "id": 39,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "homogeneous",
+  "category": "Automotive",
+  "price": 985.12,
+  "id": 40,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Distributed",
+  "category": "Automotive",
+  "price": 593.07,
+  "id": 41,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Sharable",
+  "category": "Automotive",
+  "price": 823.92,
+  "id": 42,
+  "quantity": 11,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "responsive",
+  "category": "Automotive",
+  "price": 264.37,
+  "id": 43,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "website",
+  "category": "Automotive",
+  "price": 817.33,
+  "id": 44,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Progressive",
+  "category": "Automotive",
+  "price": 194.67,
+  "id": 45,
+  "quantity": 10,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Centralized",
+  "category": "Automotive",
+  "price": 315.3,
+  "id": 46,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "heuristic",
+  "category": "Automotive",
+  "price": 974.71,
+  "id": 47,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "contingency",
+  "category": "Automotive",
+  "price": 741.84,
+  "id": 48,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Inverse",
+  "category": "Automotive",
+  "price": 911.16,
+  "id": 49,
+  "quantity": 4,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "multi-tasking",
+  "category": "Automotive",
+  "price": 709.6,
+  "id": 50,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "even-keeled",
+  "category": "Automotive",
+  "price": 369.13,
+  "id": 51,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "User-centric",
+  "category": "Automotive",
+  "price": 652.71,
+  "id": 52,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "multimedia",
+  "category": "Automotive",
+  "price": 311.57,
+  "id": 53,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "algorithm",
+  "category": "Automotive",
+  "price": 570.79,
+  "id": 54,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Streamlined",
+  "category": "Automotive",
+  "price": 712.22,
+  "id": 55,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Inverse",
+  "category": "Automotive",
+  "price": 306.75,
+  "id": 56,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "cohesive",
+  "category": "Automotive",
+  "price": 478.05,
+  "id": 57,
+  "quantity": 10,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "time-frame",
+  "category": "Automotive",
+  "price": 692.53,
+  "id": 58,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "optimal",
+  "category": "Automotive",
+  "price": 159.14,
+  "id": 59,
+  "quantity": 9,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Triple-buffered",
+  "category": "Automotive",
+  "price": 548.11,
+  "id": 60,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Horizontal",
+  "category": "Automotive",
+  "price": 741.32,
+  "id": 61,
+  "quantity": 3,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "context-sensitive",
+  "category": "Automotive",
+  "price": 775.48,
+  "id": 62,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "fault-tolerant",
+  "category": "Automotive",
+  "price": 47.35,
+  "id": 63,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "architecture",
+  "category": "Automotive",
+  "price": 681.94,
+  "id": 64,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "firmware",
+  "category": "Automotive",
+  "price": 314.25,
+  "id": 65,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Programmable",
+  "category": "Automotive",
+  "price": 293.79,
+  "id": 66,
+  "quantity": 4,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Synergized",
+  "category": "Automotive",
+  "price": 631.86,
+  "id": 67,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "fresh-thinking",
+  "category": "Automotive",
+  "price": 860.3,
+  "id": 68,
+  "quantity": 6,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "exuding",
+  "category": "Automotive",
+  "price": 368.37,
+  "id": 69,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "optimal",
+  "category": "Automotive",
+  "price": 65.47,
+  "id": 70,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "dedicated",
+  "category": "Automotive",
+  "price": 237.77,
+  "id": 71,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Multi-channelled",
+  "category": "Automotive",
+  "price": 193.56,
+  "id": 72,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "system engine",
+  "category": "Automotive",
+  "price": 278.38,
+  "id": 73,
+  "quantity": 4,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "stable",
+  "category": "Automotive",
+  "price": 140.15,
+  "id": 74,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "paradigm",
+  "category": "Automotive",
+  "price": 772.78,
+  "id": 75,
+  "quantity": 12,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "incremental",
+  "category": "Automotive",
+  "price": 786.14,
+  "id": 76,
+  "quantity": 7,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "framework",
+  "category": "Automotive",
+  "price": 255.97,
+  "id": 77,
+  "quantity": 10,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "moratorium",
+  "category": "Automotive",
+  "price": 565.86,
+  "id": 78,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "User-friendly",
+  "category": "Automotive",
+  "price": 209.76,
+  "id": 79,
+  "quantity": 11,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "reciprocal",
+  "category": "Automotive",
+  "price": 174.81,
+  "id": 80,
+  "quantity": 1,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "adapter",
+  "category": "Automotive",
+  "price": 68.19,
+  "id": 81,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "protocol",
+  "category": "Automotive",
+  "price": 473.2,
+  "id": 82,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "coherent",
+  "category": "Automotive",
+  "price": 875.78,
+  "id": 83,
+  "quantity": 11,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "firmware",
+  "category": "Automotive",
+  "price": 26.76,
+  "id": 84,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "customer loyalty",
+  "category": "Automotive",
+  "price": 929.75,
+  "id": 85,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "customer loyalty",
+  "category": "Automotive",
+  "price": 179.74,
+  "id": 86,
+  "quantity": 4,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "local",
+  "category": "Automotive",
+  "price": 696.45,
+  "id": 87,
+  "quantity": 3,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "functionalities",
+  "category": "Automotive",
+  "price": 547.8,
+  "id": 88,
+  "quantity": 14,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Exclusive",
+  "category": "Automotive",
+  "price": 483.8,
+  "id": 89,
+  "quantity": 9,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "toolset",
+  "category": "Automotive",
+  "price": 557.45,
+  "id": 90,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "upward-trending",
+  "category": "Automotive",
+  "price": 125.45,
+  "id": 91,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Monitored",
+  "category": "Automotive",
+  "price": 484.45,
+  "id": 92,
+  "quantity": 3,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Multi-channelled",
+  "category": "Automotive",
+  "price": 196.57,
+  "id": 93,
+  "quantity": 14,
+  "image": "http://dummyimage.com/200x300.png/cc0000/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Fundamental",
+  "category": "Automotive",
+  "price": 316.23,
+  "id": 94,
+  "quantity": 2,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "Up-sized",
+  "category": "Automotive",
+  "price": 864.88,
+  "id": 95,
+  "quantity": 10,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Open-source",
+  "category": "Automotive",
+  "price": 965.01,
+  "id": 96,
+  "quantity": 13,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "interface",
+  "category": "Automotive",
+  "price": 220.9,
+  "id": 97,
+  "quantity": 0,
+  "image": "http://dummyimage.com/200x300.png/dddddd/000000",
+  "in_cart": 0
+}, {
+  "name": "global",
+  "category": "Automotive",
+  "price": 953.95,
+  "id": 98,
+  "quantity": 8,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Organized",
+  "category": "Automotive",
+  "price": 285.01,
+  "id": 99,
+  "quantity": 5,
+  "image": "http://dummyimage.com/200x300.png/5fa2dd/ffffff",
+  "in_cart": 0
+}, {
+  "name": "Decentralized",
+  "category": "Automotive",
+  "price": 271.95,
+  "id": 100,
+  "quantity": 15,
+  "image": "http://dummyimage.com/200x300.png/ff4444/ffffff",
+  "in_cart": 0
+}];
+const App = () => {
+  return (
+    <BrowserRouter>
+    <UserProvider>
+      <Routes>
+        <Route path="/" element={<NavigationBar />}>
+          <Route path="" element={<HomePage />} />
+            <Route path="products" element={<Products products={products} />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="auth" element={<UserLogging />} />
+        </Route>
+      </Routes>
+
+    </UserProvider>
+    </BrowserRouter>
+  );
+};
+
+export default App;
