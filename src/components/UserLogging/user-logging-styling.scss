@@ -1,0 +1,16 @@
+.user-logging-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 0px;
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+    .user-logging-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 5% 0px;
+        align-items: center;
+        flex-direction: column;
+    }
+}

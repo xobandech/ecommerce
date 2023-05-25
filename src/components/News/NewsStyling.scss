@@ -1,0 +1,154 @@
+body, html {
+  font-size: 1.8vh;
+}
+
+img {
+  width: 100%;
+}
+
+
+.news {
+  @media (max-width: 768px) {
+    font-size: 2vh; 
+  }
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  justify-content: space-between;
+  .news-block {
+    width: 100%;
+    padding: 0px;
+    margin: 0px 0px 1em 0px;
+  }
+
+  .headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+.hot-news {
+  padding: 2em;
+  h2 {
+    justify-content: center;
+    display: flex;
+  }
+  .news-headlines {
+    display: flex;
+    justify-content: center ;
+    h2 {
+      font-size: 1em;
+      display: flex;
+    }
+    ul {
+      padding: 0px;
+      margin: 0px;
+    }
+  }
+}
+h4 {
+  margin-block: 0px;
+  margin-inline: 0px;
+}
+p {
+  margin-block: 0px;
+}
+ul {
+  list-style-type: none;
+}
+li h1 {
+  display: flex;
+  justify-content: flex-start;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big-news-block {
+  padding: 2em;
+  width: 60%;
+  height: auto;
+  font-size: 1.2em;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .news {
+
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    justify-content: space-between;
+    .news-block {
+      width: 100%;
+      padding: 0px;
+      margin: 0px 0px 1em 0px;
+    }
+  
+    .headings {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+  .how-news {
+    .news-headlines {
+      display: flex;
+      justify-content: center;
+      font-size: 3vh;
+      h2 {
+        display: flex;
+      }
+      ul {
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+  }
+  
+  h4 {
+    margin-block: 0px;  
+    margin-inline: 0px;
+  }
+  p {
+    margin-block: 0px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  li h1 {
+    display: flex;
+    justify-content: flex-start;
+  }
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .news-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .big-news-block {
+    padding: 2em;
+    align-self: center;
+    width: 67%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+}
