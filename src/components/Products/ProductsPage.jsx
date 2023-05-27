@@ -7,7 +7,7 @@ import { db } from "../../utils/firebase";
 import { ProductsContext } from "../Contexts/ProductsContext";
 
 const ProductsPage = ({ productsPerPage }) => {
-  const { products } = useContext(ProductsContext);
+  const { products, setProducts } = useContext(ProductsContext);
   const { currentUser } = useContext(UserContext);
   const { cartItems, setCartItems } = useContext(CartItemsContext);
   const [currentPage, setCurrentPage] = useState(1);
@@ -22,7 +22,6 @@ const ProductsPage = ({ productsPerPage }) => {
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
-
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
   };

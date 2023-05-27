@@ -7,7 +7,7 @@ const ProductsProvider = ({children}) => {
     useEffect(() => {
         const fetchProducts = async () => {
           const fetchedProducts = await getCollection("products");
-          setProducts(fetchedProducts); // Set the products state with the fetched products
+          setProducts(fetchedProducts);
         };
         fetchProducts();
       }, []);
