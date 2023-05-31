@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartItemsContext } from "../Contexts/CartItemsContext";
 import CartItems from "../Cart/CartItems";
+import StripePaymentForm from "./StripePaymentForm";
 const CheckoutPage = () => {
 
   const context = useContext(CartItemsContext);
@@ -14,7 +15,7 @@ const CheckoutPage = () => {
   }     
   // TODO: ADD STRIPT OR ANOTHER PAY SYSTEM 
   return (
-    <CartItems />
+      <StripePaymentForm />    
     )
 }
 
