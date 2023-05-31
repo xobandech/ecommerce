@@ -14,20 +14,17 @@ const App = () => {
     <BrowserRouter>
       <UserProvider>
         <CartItemsProvider>
-              <ProductsProvider>
-          <Routes>
-            <Route path="/" element={<NavigationBar />}>
-              <Route path="" element={<HomePage />} />
-              <Route
-                path="products"
-                element={<Products/>}
-              />
-              <Route path="cart" element={<Cart />} />
-              <Route path="auth" element={<UserLogging />} />
-              <Route path="cart/checkout" element={<CheckoutPage />} />
-            </Route>
-          </Routes>
-              </ProductsProvider>
+          <ProductsProvider>
+            <Routes>
+              <Route path="/" element={<NavigationBar />}>
+                <Route path="" element={<HomePage />} />
+                <Route path="products" element={<Products />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="auth" element={<UserLogging />} />
+                <Route path="cart/checkout" element={<CheckoutPage />} />
+              </Route>
+            </Routes>
+          </ProductsProvider>
         </CartItemsProvider>
       </UserProvider>
     </BrowserRouter>

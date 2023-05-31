@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartItemsContext } from "../Contexts/CartItemsContext";
-
+import CartItems from "../Cart/CartItems";
 const CheckoutPage = () => {
 
   const context = useContext(CartItemsContext);
@@ -14,8 +14,8 @@ const CheckoutPage = () => {
   }     
   // TODO: ADD STRIPT OR ANOTHER PAY SYSTEM 
   return (
-    <div>Checkout</div>
-  )
+    <CartItems />
+    )
 }
 
 export default CheckoutPage
