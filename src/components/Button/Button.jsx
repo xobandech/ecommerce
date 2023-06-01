@@ -16,9 +16,9 @@ const BUTTON_TYPES = {
     'checkout' : 'checkout',
 }
 
-const Button = ({ children, buttonType, ...otherProps }) => {
+const Button = ({ disabled, children, buttonType, ...otherProps }) => {
     return (
-        <button className={`button-container ${BUTTON_TYPES[buttonType]}`} {...otherProps}>
+        <button disabled={disabled} className={`button-container ${BUTTON_TYPES[buttonType]}`} {...otherProps}>
             {children}
         </button>
     )

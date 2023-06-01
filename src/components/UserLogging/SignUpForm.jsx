@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import FormInput from "../FormInput/FormInput"
 import Button from "../Button/Button"
 import "./sign-up-form-styling.scss"
+import { updateProfile } from "firebase/auth"
 import { signUpWithEmailAndPassword, signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase"
 import { UserContext } from "../Contexts/UserContext"
 import { getDoc } from "firebase/firestore"
@@ -31,21 +32,23 @@ const SignUpForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (password != confirmPassword) {
-            alert("Passwords don't match")
-            return  
+        if (password !== confirmPassword) {
+          alert("Passwords don't match");
+          return;
         }
         try {
-            const { user } = await signUpWithEmailAndPassword(email, password)
-            const docRef = await createUserDocumentFromAuth(user);
-            const docSnap = await getDoc(docRef)
-            localStorage.setItem('user', JSON.stringify(user)); // Convert user object to a string
-            setFormFields(defaultFormFields)
-            setCurrentUser(user)
+          const { user } = await signUpWithEmailAndPassword(email, password);
+          const displayName = `${firstName} ${lastName}`
+          await createUserDocumentFromAuth(user, displayName ); // Pass the displayName as a parameter to createUserDocumentFromAuth
+          const docRef = await createUserDocumentFromAuth(user);
+          const docSnap = await getDoc(docRef);
+          localStorage.setItem('user', JSON.stringify(user));
+          setFormFields(defaultFormFields);
+          setCurrentUser(user);
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
-    }
+      };
 
 
     return (

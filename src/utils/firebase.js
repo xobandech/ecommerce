@@ -59,21 +59,23 @@ export const getCollection = async (collectionKey) => {
   }
 };
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, displayName = null) => {
   const userDocRef = doc(db, "users", userAuth.uid);
 
   const userSnapshot = await getDoc(userDocRef);
 
   if (!userSnapshot.exists()) {
-    const { displayName, email } = userAuth;
+    console.log(userAuth);
+    const { email, displayName: authDisplayName } = userAuth; // Retrieve the displayName from userAuth
     const createdAt = new Date();
-    const cartItems = []
+    const cartItems = [];
+
     try {
       await setDoc(userDocRef, {
-        displayName,
+        displayName: displayName || authDisplayName, // Use displayName from function argument if provided, otherwise use displayName from userAuth
         email,
-        createdAt,  
-        cartItems
+        createdAt,
+        cartItems,
       });
     } catch (error) {
       console.log("error creating the user", error.message);
@@ -81,7 +83,8 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
 
   return userDocRef;
-};  
+};
+
 
 export const signUpWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
