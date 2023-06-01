@@ -15,7 +15,7 @@ const CheckoutPage = () => {
   }     
   // TODO: ADD STRIPT OR ANOTHER PAY SYSTEM 
   return (
-      <StripePaymentForm />    
+      <StripePaymentForm />      
     )
 }
 
