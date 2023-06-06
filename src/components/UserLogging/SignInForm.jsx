@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import FormInput from "../FormInput/FormInput"
+import FormInput from "../FormInput/FormInput.tsx"
 import Button from "../Button/Button"
 import "./sign-in-form-styling.scss"
 import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase"

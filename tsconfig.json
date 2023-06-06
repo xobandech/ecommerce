@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "none",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "target": "es6",
+    "sourceMap": true,
+    "outFile": "dist/bundle.js",
+    "esModuleInterop": true // Add this line
+  },
+  "include": ["src"]
+}
