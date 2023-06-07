@@ -1,9 +1,9 @@
 import { useContext, useState } from "react"
 import FormInput from "../FormInput/FormInput.tsx"
-import Button from "../Button/Button"
+import Button from "../Button/Button.jsx"
 import "./sign-up-form-styling.scss"
-import { signUpWithEmailAndPassword, signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase"
-import { UserContext } from "../Contexts/UserContext"
+import { signUpWithEmailAndPassword, signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase.js"
+import { UserContext } from "../Contexts/UserContext.jsx"
 import { getDoc } from "firebase/firestore"
 const defaultFormFields = {
     firstName: '',

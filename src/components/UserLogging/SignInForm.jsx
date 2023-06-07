@@ -9,7 +9,7 @@ import { CartItemsContext } from "../Contexts/CartItemsContext"
 import {  getDoc } from "firebase/firestore"
 const defaultFormFields = {
     email: '',
-    password: '',
+    password: '',   
 }
 
 const SignInForm = () => {
