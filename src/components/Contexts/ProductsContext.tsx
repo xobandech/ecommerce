@@ -1,7 +1,7 @@
 import React, {useState, createContext, useEffect} from "react";
 import { getCollection } from "../../utils/firebase";
 
-type Product = {
+export  type Product = {
   category: string;
   id: number;
   image: string;
