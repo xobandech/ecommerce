@@ -4,7 +4,7 @@ const NewsBlock = ({ news }) => {
   return (
     <>
       {news.map(({ headline, category, content, img, id, date }) => (
-        <div className={"news-block"}>
+        <div key={id} className={"news-block"}>
           <h4>{headline}</h4>
           <img src={img} alt={headline} />
           <div className="info">

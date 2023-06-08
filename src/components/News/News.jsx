@@ -108,17 +108,48 @@ const news = [
   },
 ];
 const headlines = [
-  "Scientists Discover New Species of Underwater Plant",
-  "Major Tech Company Announces Plans for Autonomous Electric Cars",
-  "Hollywood Actress Wins Award for Humanitarian Work",
-  "Study Finds Link Between Social Media Use and Depression",
-  "Government Approves New Plan to Combat Climate Change",
-  "Massive Data Breach Affects Millions of Customers",
-  "Breakthrough in Cancer Research Brings New Hope for Patients",
-  "Protests Erupt in Major City Following Police Shooting",
-  "World Leaders Gather to Discuss Global Economic Recovery",
-  "New Study Reveals Surprising Benefits of Exercise for Mental Health",
+  {
+    id: 1,
+    headline: "Scientists Discover New Species of Underwater Plant"
+  },
+  {
+    id: 2,
+    headline: "Major Tech Company Announces Plans for Autonomous Electric Cars"
+  },
+  {
+    id: 3,
+    headline: "Hollywood Actress Wins Award for Humanitarian Work"
+  },
+  {
+    id: 4,
+    headline: "Study Finds Link Between Social Media Use and Depression"
+  },
+  {
+    id: 5,
+    headline: "Government Approves New Plan to Combat Climate Change"
+  },
+  {
+    id: 6,
+    headline: "Massive Data Breach Affects Millions of Customers"
+  },
+  {
+    id: 7,
+    headline: "Breakthrough in Cancer Research Brings New Hope for Patients"
+  },
+  {
+    id: 8,
+    headline: "Protests Erupt in Major City Following Police Shooting"
+  },
+  {
+    id: 9,
+    headline: "World Leaders Gather to Discuss Global Economic Recovery"
+  },
+  {
+    id: 10,
+    headline: "New Study Reveals Surprising Benefits of Exercise for Mental Health"
+  }
 ];
+
 const bigNews = [
   {
     id: 1,
