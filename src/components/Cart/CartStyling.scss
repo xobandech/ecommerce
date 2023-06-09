@@ -1,35 +1,45 @@
 table {
   margin-left: auto;
   margin-right: auto; 
+  .table-container {
+    overflow: auto;
+  }
+  
+  .col-desc {
+    font-size: 1.1em;
+    text-transform: capitalize;
+  }
+  
+  tr {
+    font-size: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  td {
+    text-align: center;
+  }
+  th {
+    outline: solid #333 2px;
+    background-color: #333;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    height: 2.5rem;
+    font-size: 1em;
+  }
+
 }
-th {
-  outline: solid #333 2px;
-  background-color: #333;
-  color: white;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
-  height: 2.5rem;
-  font-size: 1em;
-}
+
 span {
   margin: 0 3rem;
 }
 
-.table-container {
-  overflow: auto;
-}
-
-.col-desc {
-  font-size: 1.1em;
-  text-transform: capitalize;
-}
-
-tr {
-  font-size: 1em;
-  margin-left: auto;
-  margin-right: auto;
-}
-td {
-  text-align: center;
+.checkout {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 15rem;
+  button {
+    font-size: 0.8rem
+  }
 }

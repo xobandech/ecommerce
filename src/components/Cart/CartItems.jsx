@@ -4,7 +4,6 @@ import { CartItemsContext } from "../Contexts/CartItemsContext";
 import { db } from "../../utils/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { UserContext } from "../Contexts/UserContext";
-import "./CartStyling.scss";
 const CartItems = () => {
   const context = useContext(CartItemsContext);
   const { currentUser } = useContext(UserContext);

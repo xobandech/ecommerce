@@ -64,7 +64,7 @@ const StripePaymentForm = ({ amount }) => {
           </FormContainer>
         </PaymentFormContainer>
       ) : isSuccesfull ? (
-        <h1>Succesful payment. Thank you!</h1>
+        <h1>Succesful payment. Thank you!<br/> We will contact you as soon as possible</h1>
       ) : (
         <h1>Payment failed. Try again.</h1>
       )}

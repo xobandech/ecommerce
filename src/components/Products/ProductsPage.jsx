@@ -41,7 +41,6 @@ const ProductsPage = ({ productsPerPage }) => {
             price={price}
             image={image}
             handleAddToCart={async () => {
-              console.log("Added to cart");
               if (cartItems.find((item) => item.id === id)) {
                 alert("Item already in cart");
                 return;
@@ -55,7 +54,6 @@ const ProductsPage = ({ productsPerPage }) => {
                 if (currentUser) {
                   const UserDocRef = doc(db, "users", currentUser.uid);
                   await updateDoc(UserDocRef, { cartItems: updatedCartItems });
-                  console.log("Cart items updated in Firestore");
                 }
               } catch (error) {
                 console.error("Error updating cart items in Firestore", error);

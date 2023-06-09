@@ -5,11 +5,11 @@ import CartItemsProvider from "./components/Contexts/CartItemsContext";
 import NavigationBar from "./components/NavBar/NavigationBar";
 import HomePage from "./components/Home/HomePage";
 import Products from "./components/Products/Products";
-import Cart from "./components/Cart/Cart";
 import UserLogging from "./components/UserLogging/UserLogging";
 import CheckoutPage from "./components/CheckoutPage/CheckoutPage";
 import ProductsProvider from "./components/Contexts/ProductsContext";
 import { stripePromise } from "./utils/stripe";
+import CartPage from "./components/Cart/CartPage";
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,7 +21,7 @@ const App = () => {
                 <Route path="/" element={<NavigationBar />}>
                   <Route path="" element={<HomePage />} />
                   <Route path="products" element={<Products />} />
-                  <Route path="cart" element={<Cart />} />
+                  <Route path="cart" element={<CartPage />} />
                   <Route path="auth" element={<UserLogging />} />
                   <Route path="cart/checkout" element={<CheckoutPage />} />
                 </Route>

@@ -11,7 +11,7 @@ const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartItem }) => {
           <p>{item.name}</p>
     </td>
     <td className="col-price">
-       <p>{item.price}</p>
+       <p>{(Math.floor((item.price * 1.2) * 10) / 10).toFixed(2)}</p>
     </td>
     <td className="col-qty">
           <input
@@ -28,7 +28,7 @@ const CartItem = ({ item, handleRemoveFromCart, handleUpdateCartItem }) => {
          <button onClick={handleRemoveFromCart}>X</button>
     </td>
     <td className="col-subtotal">
-         {item.price*item.in_cart}
+         {(Math.floor((item.price*item.in_cart * 1.2) * 10) / 10).toFixed(2)}
     </td>
     </>
   );
