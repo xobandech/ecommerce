@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
 export const PaymentFormContainer = styled.div`
-    height: 300px;
     display: flex;
+    width: 100%;
+    margin-top: 10rem;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -10,5 +11,6 @@ export const PaymentFormContainer = styled.div`
 
 export const FormContainer = styled.form`
     height: 100px;
-    min-width: 500px;   
+    width: 50%;
+    max-width: 400px
 `

@@ -56,10 +56,11 @@ const StripePaymentForm = ({ amount }) => {
         <PaymentFormContainer>
           <FormContainer onSubmit={paymentHandler}>
             <h2>Payment with card:</h2>
-            <CardElement options={{
+            <CardElement style="display:flex;" options={{
               style: {
                 base: {
-                  fontSize: '16px',
+                  display: 'flex',
+                  fontSize: '1.2em',
                   fontFamily: '"Open Sans", sans-serif',
                   "::placeholder": {
                     color: "#aab7c4",
