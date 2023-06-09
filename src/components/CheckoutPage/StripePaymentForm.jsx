@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { FormContainer, PaymentFormContainer } from "./payment-form-styling";
 import { UserContext } from "../Contexts/UserContext";
 import { CartItemsContext } from "../Contexts/CartItemsContext";
+
 const StripePaymentForm = ({ amount }) => {
   const { cartItems, setCartItems } = useContext(CartItemsContext);
   const stripe = useStripe();
@@ -48,13 +49,24 @@ const StripePaymentForm = ({ amount }) => {
 
     setIsDisabled(false);
   };
+
   return (
     <>
-      {isSuccesfull == "not completed" ? (
+      {isSuccesfull === "not completed" ? (
         <PaymentFormContainer>
           <FormContainer onSubmit={paymentHandler}>
             <h2>Payment with card:</h2>
-            <CardElement />
+            <CardElement options={{
+              style: {
+                base: {
+                  fontSize: '16px',
+                  fontFamily: '"Open Sans", sans-serif',
+                  "::placeholder": {
+                    color: "#aab7c4",
+                  },
+                },
+              },
+            }} />
             <Button disabled={isDisabled}>Submit payment</Button>
             <p>For payments use test card:</p>
             <p>4242424242424242</p>

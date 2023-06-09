@@ -1,34 +1,37 @@
-table {
-  margin-left: auto;
-  margin-right: auto; 
-  .table-container {
-    overflow: auto;
-  }
+.table-container {
+  overflow-x: auto;
+  white-space: nowrap;
   
-  .col-desc {
-    font-size: 1.1em;
-    text-transform: capitalize;
-  }
-  
-  tr {
-    font-size: 1em;
+  table {
     margin-left: auto;
     margin-right: auto;
+    
+    .col-desc {
+      font-size: 1.1em;
+      text-transform: capitalize;
+    }
+    
+    tr {
+      font-size: 1em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    td {
+      text-align: center;
+    }
+    
+    th {
+      outline: solid #333 2px;
+      background-color: #333;
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: bold;
+      height: 2.5rem;
+      font-size: 1em;
+    }
   }
-  td {
-    text-align: center;
-  }
-  th {
-    outline: solid #333 2px;
-    background-color: #333;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: bold;
-    height: 2.5rem;
-    font-size: 1em;
-  }
-
 }
 
 span {
@@ -39,7 +42,8 @@ span {
   text-align: left;
   margin: 0 auto;
   max-width: 15rem;
+  
   button {
-    font-size: 0.8rem
+    font-size: 0.8rem;
   }
 }
