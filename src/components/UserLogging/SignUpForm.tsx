@@ -2,7 +2,11 @@ import React, { useContext, useState, ChangeEvent, FormEvent } from "react";
 import FormInput from "../FormInput/FormInput";
 import Button from "../Button/Button";
 import "./sign-up-form-styling.scss";
-import { signUpWithEmailAndPassword, signInWithGooglePopup, createUserDocumentFromAuth } from "../../utils/firebase";
+import {
+  signUpWithEmailAndPassword,
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase";
 import { UserContext } from "../Contexts/UserContext";
 import { getDoc } from "firebase/firestore";
 interface FormFields {
@@ -14,11 +18,11 @@ interface FormFields {
 }
 
 const defaultFormFields: FormFields = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  password: '',
-  confirmPassword: ''
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
 };
 
 const SignUpForm = () => {
@@ -49,7 +53,7 @@ const SignUpForm = () => {
       await createUserDocumentFromAuth(user, displayName);
       const docRef = await createUserDocumentFromAuth(user);
       const docSnap = await getDoc(docRef);
-      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
       setFormFields(defaultFormFields);
       setCurrentUser(user);
     } catch (error) {
@@ -62,17 +66,52 @@ const SignUpForm = () => {
       <h1>Sign Up</h1>
       <h2>Don't have an account?</h2>
       <form onSubmit={handleSubmit}>
-        <FormInput label="First Name" type="text" name="firstName" onChange={handleChange} value={firstName} />
+        <FormInput
+          label="First Name"
+          type="text"
+          name="firstName"
+          onChange={handleChange}
+          value={firstName}
+        />
 
-        <FormInput label="Last Name" type="text" name="lastName" onChange={handleChange} value={lastName} />
+        <FormInput
+          label="Last Name"
+          type="text"
+          name="lastName"
+          onChange={handleChange}
+          value={lastName}
+        />
 
-        <FormInput label="Email" type="email" required name="email" onChange={handleChange} value={email} />
+        <FormInput
+          label="Email"
+          type="email"
+          required
+          name="email"
+          onChange={handleChange}
+          value={email}
+        />
 
-        <FormInput label="Password" type="text" required name="password" onChange={handleChange} value={password} />
+        <FormInput
+          label="Password"
+          type="text"
+          required
+          name="password"
+          onChange={handleChange}
+          value={password}
+        />
 
-        <FormInput label="Confirm Password" type="text" required name="confirmPassword" onChange={handleChange} value={confirmPassword} />
-        
-        <Button type="submit">Sign Up</Button>
+        <FormInput
+          label="Confirm Password"
+          type="text"
+          required
+          name="confirmPassword"
+          onChange={handleChange}
+          value={confirmPassword}
+        />
+
+        <Button disabled={false} buttonType="sign-in" type="submit">
+          Sign Up
+        </Button>
       </form>
     </div>
   );
