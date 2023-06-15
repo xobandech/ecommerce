@@ -4,7 +4,7 @@ import { CartItemsContext } from "../Contexts/CartItemsContext";
 import { updateDoc, doc } from "firebase/firestore";
 import { UserContext } from "../Contexts/UserContext";
 import { db } from "../../utils/firebase";
-import { ProductsContext } from "../Contexts/ProductsContext";
+import { Product, ProductsContext } from "../Contexts/ProductsContext";
 
 const ProductsPage = ({ productsPerPage }) => {
   const { products, setProducts } = useContext(ProductsContext);
@@ -48,7 +48,7 @@ const ProductsPage = ({ productsPerPage }) => {
               const updatedCartItems = [
                 ...cartItems,
                 { name, price, image, id, in_cart: 1, quantity },
-              ];
+              ] as Product[];
               await setCartItems(updatedCartItems);
               try {
                 if (currentUser) {
