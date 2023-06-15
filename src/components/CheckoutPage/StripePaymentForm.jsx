@@ -69,7 +69,8 @@ const StripePaymentForm = ({ amount }) => {
               },
             }} />
             <Button disabled={isDisabled}>Submit payment</Button>
-            <p>For payments use test card:</p>
+            This works only with "netlify dev" for run
+                         <p>For payments use test card:</p>
             <p>4242424242424242</p>
             <p>03/30</p>
             <p>333</p>

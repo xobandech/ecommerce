@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { CartItemsContext } from "../Contexts/CartItemsContext";
 import { db } from "../../utils/firebase";
@@ -60,7 +60,7 @@ const CartItems = () => {
             </tr>
           </thead>
           {cartItems.map((item) => (
-            <tbody key={item.id} id={item.id}>
+            <tbody key={item.id} id={item.id.toString()}>
               <tr className="item-info">
                 <CartItem
                   item={item}
