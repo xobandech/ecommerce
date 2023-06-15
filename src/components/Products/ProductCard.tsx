@@ -1,3 +1,5 @@
+import React from "react";
+
 const ProductCard = ({ name, price, image, id, handleAddToCart }) => {
   return (
     <div className="product-card" id={id}>
